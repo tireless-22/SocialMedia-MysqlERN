@@ -1,0 +1,29 @@
+<!-- FrontEnd Features -->
+
+===> Comments should be there for every post posted
+
+===> user who created that post can delete the comments and post
+===> user who posted that post can delete that comment or update that comment
+
+===> In the profile page there will profiles things for that user 
+=>If the user did not created that profile all the input 
+
+fields except the button are same. the button have to show that create profile
+
+=>If the user already created the profile, we have to the button as update profile
+
+===> In the profile we can show the posts posted by the user who logged in, already backend route created for this.
+
+===> the above functionality should be shown to then if they authorize that
+
+
+
+
+<!-- Backend Features -->
+
+===> Validation of the jsonwebtoken by taking the token from the local storage
+
+
+
+
+

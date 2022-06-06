@@ -77,14 +77,14 @@ function CreateAPost() {
   };
 
   const submit = async(dt) => {
-    console.log(dt);
+    // console.log(dt);
 
     await axios.post("http://localhost:3001/posts", dt)
       .then(
-        console.log("hello")
+        // console.log("hello")
     )
       .catch((e) => {
-        console.log(e);
+        // console.log(e);
       })
       ;
 

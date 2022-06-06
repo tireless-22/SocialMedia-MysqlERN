@@ -32,7 +32,7 @@ const Navbar = () => {
 
   const {LoggedIn,setLoggedIn }=useContext(loginContext)
   
-  console.log(LoggedIn)
+  // console.log(LoggedIn)
 
   return (
     <NavbarContainer>
