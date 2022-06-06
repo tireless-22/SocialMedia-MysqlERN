@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import { loginContext } from "../Helper/Context";
 import { useContext } from "react";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -44,10 +45,7 @@ const Label = styled.label`
   font-size: 30px;
 `;
 
-const Input = styled.input`
-  width: 400px;
-  height: 40px;
-`;
+
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -67,13 +65,32 @@ const Button = styled.button`
 
 
 function CreateAPost() {
+
+  const { LoggedIn, setLoggedIn } = useContext(loginContext);
+  
   const initialValues = {
     title: "",
     description: "",
     summary: "",
+    UserId: LoggedIn.id
+
   };
 
-  const submit = (data) => {
+  const submit = async(dt) => {
+    console.log(dt);
+
+    await axios.post("http://localhost:3001/posts", dt)
+      .then(
+        console.log("hello")
+    )
+      .catch((e) => {
+        console.log(e);
+      })
+      ;
+
+
+
+
     // console.log("hello");
     // console.log(data);
   };
@@ -82,6 +99,10 @@ function CreateAPost() {
     description: Yup.string().min(15).max(150).required(),
     summary: Yup.string().min(3).max(15).required(),
   });
+
+
+  
+
 
   return (
     <Container>
@@ -120,12 +141,12 @@ function CreateAPost() {
             </LableAndInput>
 
             <LableAndInput>
-              <Label>username</Label>
+              <Label>summary</Label>
               <ErrorMessage name="summary" component="span" />
               <Field
                 id="inputCreatePost"
-                name="username"
-                placeholder="username"
+                name="summary"
+                placeholder="summary"
                 autoComplete="off"
               />
             </LableAndInput>

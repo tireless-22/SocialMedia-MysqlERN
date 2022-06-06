@@ -55,8 +55,9 @@ router.post("/login",async (req, res) => {
 			res.json("please check the password")
 			
 		}
-		var token = jwt.sign({ username: username }, "SecretKey");
-		res.send({ username: username, token: token });
+		console.log(user)
+		var token = jwt.sign({ username: username,id:user.id }, "SecretKey");
+		res.send({ username: username, token: token,id:user.id });
   });
 })
 

@@ -85,9 +85,13 @@ function CreateAPost() {
   const submit = async (data) => {
     await axios.post("http://localhost:3001/users/login", data)
       .then((dt) => {
+        const id = dt.data.id;
+        console.log(dt.data);
      
         localStorage.setItem("accessToken", dt.data.token);
-        setLoggedIn({ ...LoggedIn, status: true });
+        setLoggedIn({ ...LoggedIn, status: true,id:parseInt(id) });
+        // setLoggedIn({ ...LoggedIn, id:id });
+
         history("/");
 
     })

@@ -60,7 +60,9 @@ const Navbar = () => {
               <h4>Profile</h4>
             </Link>
 
-            <h4>Logout</h4>
+              <h4 onClick={() => {
+                setLoggedIn({username:"",id:0,status:false})
+            }}>Logout</h4>
           </RightNav>
         )}
       </RightNav>
