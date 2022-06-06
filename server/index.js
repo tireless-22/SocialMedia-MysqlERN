@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 db.sequelize.sync().then(() => {
 	
 	app.listen(3001, () => {
-	console.log("server is running")
+	// console.log("server is running")
 })
 
 })

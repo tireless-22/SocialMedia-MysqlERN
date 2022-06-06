@@ -10,7 +10,7 @@ router.get("/:id", async (req, res) => {
       UserId:id
     }
   })
-  console.log(profile);
+  // console.log(profile);
   res.send(profile);
 });
 

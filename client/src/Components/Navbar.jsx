@@ -31,7 +31,7 @@ const RightNav = styled.div`
 const Navbar = () => {
 
   const {LoggedIn,setLoggedIn }=useContext(loginContext)
-  const check = true;
+  
   console.log(LoggedIn)
 
   return (
@@ -45,7 +45,7 @@ const Navbar = () => {
         </Link>
       </LeftNav>
       <RightNav>
-        {!LoggedIn ? (
+        {!LoggedIn.status ? (
           <RightNav>
             <Link to="/register">
               <h4>Register</h4>

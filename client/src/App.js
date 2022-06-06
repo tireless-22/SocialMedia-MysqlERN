@@ -21,7 +21,7 @@ import CreateAPost from './Pages/CreateAPost';
 function App() {
 
 
-  const [LoggedIn, setLoggedIn] = useState(false);
+  const [LoggedIn, setLoggedIn] = useState({username:"",id:0,status:false});
 
   return (
     <loginContext.Provider value={{ LoggedIn, setLoggedIn }}>
@@ -29,6 +29,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Posts />} />
+          <Route path="/posts" element={<Posts/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />

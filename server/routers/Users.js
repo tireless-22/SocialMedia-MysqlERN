@@ -12,8 +12,9 @@ const saltRounds = 10;
 
 
 
-router.get("/", (req, res) => {
-	res.send("this is from users")
+router.get("/",async (req, res) => {
+	const data=await Users.findAll()
+	res.send(data)
 })
 
 router.post("/register", (req, res) => {
@@ -65,7 +66,7 @@ router.post("/login",async (req, res) => {
 router.get("/byuserid/:id", async (req, res) => {
 	const id = req.params.id;
 	const user = await Users.findByPk(id)
-	console.log(user)
+	// console.log(user)
 
 	res.send(user)
 	

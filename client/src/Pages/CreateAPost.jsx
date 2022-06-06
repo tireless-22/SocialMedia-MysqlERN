@@ -74,8 +74,8 @@ function CreateAPost() {
   };
 
   const submit = (data) => {
-    console.log("hello");
-    console.log(data);
+    // console.log("hello");
+    // console.log(data);
   };
   const validate = Yup.object().shape({
     title: Yup.string().min(3).max(15).required(),
