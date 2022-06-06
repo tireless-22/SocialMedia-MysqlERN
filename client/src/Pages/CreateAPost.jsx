@@ -2,10 +2,10 @@ import React from 'react'
 import { loginContext } from "../Helper/Context";
 import { useContext } from "react";
 
-const Profile = () => {
+const CreateAPost = () => {
 		return (
-				<div>Profile</div>
+				<div>CreateAPost</div>
 		)
 }
 
-export default Profile
+export default CreateAPost

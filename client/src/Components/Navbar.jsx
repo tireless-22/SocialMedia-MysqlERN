@@ -1,41 +1,71 @@
-import React from 'react'
+import React from "react";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
-
-const NavbarContainer=styled.div`
-	
-display: flex;
-
+import {Link } from "react-router-dom"
+import { loginContext } from "../Helper/Context";
+import { useContext } from "react";
 
 
-`
+const NavbarContainer = styled.div`
+  display: flex;
+		background-color: gray;
+		cursor: pointer;
+		
+`;
 
-const LeftNav=styled.div`
-	
-display: flex;
+const LeftNav = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
 
-`
-
-const RightNav=styled.div`
-	display: flex;
-`
-
-
+const RightNav = styled.div`
+  display: flex;
+  flex: 1;
+		flex-direction: row;
+		justify-content: space-evenly;
+`;
 
 const Navbar = () => {
-		return (
-			<NavbarContainer>
-				
-				<LeftNav>
 
+  const {LoggedIn,setLoggedIn }=useContext(loginContext)
+  const check = true;
+  console.log(LoggedIn)
 
-				</LeftNav>
-				<RightNav>
+  return (
+    <NavbarContainer>
+      <LeftNav>
+        <Link to="/">
+          <h4>Posts</h4>
+        </Link>
+        <Link to="/create">
+          <h4>Create a Post</h4>
+        </Link>
+      </LeftNav>
+      <RightNav>
+        {!LoggedIn ? (
+          <RightNav>
+            <Link to="/register">
+              <h4>Register</h4>
+            </Link>
+            <Link to="/login">
+              <h4>Login</h4>
+            </Link>
+          </RightNav>
+        ) : (
+          <RightNav>
+            <Link to="profile">
+              <h4>Profile</h4>
+            </Link>
 
-				</RightNav>
-				</NavbarContainer>
-		)
-}
+            <h4>Logout</h4>
+          </RightNav>
+        )}
+      </RightNav>
+    </NavbarContainer>
+  );
+};
 
-export default Navbar
+export default Navbar;
