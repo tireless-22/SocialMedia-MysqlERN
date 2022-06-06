@@ -8,12 +8,12 @@ import Posts from './Pages/Posts';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Profile from './Pages/Profile';
-import CreateAPost from "./Pages/CreateAPost"
+// import CreateAPost from "./Pages/CreateAPost"
 
 import {loginContext} from "./Helper/Context"
 import { useState } from 'react';
 
-
+import CreateAPost from './Pages/CreateAPost';
 
 
 
@@ -32,7 +32,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/create" element={<CreateAPost />} />
+          <Route path="/create" element={<CreateAPost/> } />
         </Routes>
       </BrowserRouter>
     </loginContext.Provider>
